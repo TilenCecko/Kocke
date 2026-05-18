@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma;
+}
+
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #12141c 0%, #1b1f2c 35%, #210f1f 100%);
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px;
+}
+
+.naslov {
+
+    position: relative;
+    margin-top: 150px;
+    font-size: 56px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0 4px 18px rgba(255, 10, 121, 0.45);
+}
+
+form {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), transparent 25%), radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 12%), radial-gradient(circle at 85% 15%, rgba(255, 0, 80, 0.15), transparent 18%);
+    pointer-events: none;
+}
+
+.vpis {
+    margin-top: 100px;
+    padding: 34px;
+    border-radius: 28px;
+    background: #09090b;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+}
+
+.igralci-vrstica,
+.spodnja-vrstica {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    width: 100%;
+}
+
+.spodnja-vrstica {
+    align-items: stretch;
+}
+
+.igralec {
+    background: #0f1117;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 22px;
+    display: grid;
+    gap: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.igralec h3 {
+    text-align: center;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(202, 78, 255, 0.4);
+}
+
+.vpisnaPolja{
+    width: 100%;
+    min-height: 54px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+    padding: 16px 18px;
+    font-size: 1rem;
+    color: #f8f8f8;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.vpisnaPolja::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.vpisnaPolja:focus{
+    outline: none;
+    border-color: #ff0a79;
+    box-shadow: 0 0 0 4px rgba(255, 10, 121, 0.18);
+    transform: translateY(-1px);
+}
+
+.nastavitve {
+    min-width: min(100%, 480px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(170px, 1fr));
+    gap: 14px;
+    padding: 20px;
+    border-radius: 24px;
+    background: #0f1117;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nastavitve label {
+    display: grid;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 700;
+}
+
+.nastavitve select {
+    cursor: pointer;
+}
+
+.gumb {
+    width: 150px;
+    min-height: 100px;
+    margin: 0 auto;
+    padding: 12px 0;
+    border-radius: 999px;
+    border: none;
+    background: #ff0a79;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(255, 10, 121, 0.24);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.result-wrapper {
+    margin-top: 150px;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 28px;
+    border-radius: 28px;
+    background: #0f1117;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.animation-panel {
+    padding: 28px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.animation-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.animation-player-box {
+    min-width: 180px;
+    flex: 1 1 180px;
+    padding: 14px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.animation-player-box strong {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.animation-player-box img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+.animation-heading {
+    margin-bottom: 18px;
+}
+
+.animation-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dice-img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+.result-dice {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+    flex: 0 0 auto;
+    max-width: 520px;
+}
+
+.result-container,
+.round-panel {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.result-container.visible,
+.round-panel.visible {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.result-panel {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+    padding: 24px;
+    border-radius: 24px;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.result-card {
+    padding: 16px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.05);
+    margin-bottom: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.result-card h3 {
+    margin-top: 0;
+}
+
+.result-info {
+    min-width: 0;
+}
+
+.game-settings-note {
+    margin: -8px 0 18px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.72);
+    font-weight: 700;
+}
+
+.dice-row {
+    text-align: center;
+    margin: 14px 0;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.winner-box {
+    padding: 18px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.result-note {
+    text-align: center;
+    margin-top: 18px;
+}
+
+@media (max-width: 680px) {
+    .nastavitve {
+        grid-template-columns: 1fr;
+    }
+
+    .result-card {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .result-dice {
+        justify-content: flex-start;
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
