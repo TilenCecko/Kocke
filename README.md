@@ -12,7 +12,6 @@ Preprosta spletna igra s kockami, izdelana v PHP, JavaScriptu, HTML in CSS. Igra
 * 🏆 Samodejni izračun rezultatov
 * 🥇 Podium zmagovalcev
 * 🎆 Animacija ognjemeta ob koncu igre
-* 📱 Responsive dizajn za različne naprave
 
 ---
 
